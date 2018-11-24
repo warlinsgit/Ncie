@@ -33,12 +33,13 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'bulma', '~> 0.1.0'
+gem 'bulma-rails', '~> 0.6.1'
 gem 'simple_form'
 gem 'devise', '~> 4.4'
 gem 'gravatar_image_tag', '~> 1.2'
-gem 'carrierwave', '~> 1.2', '>= 1.2.3'
-gem 'mini_magick', '~> 4.9', '>= 4.9.2'
+gem 'carrierwave'
+gem 'mini_magick'
+
 
 
 

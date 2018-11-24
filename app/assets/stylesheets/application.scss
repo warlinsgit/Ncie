@@ -14,11 +14,14 @@
  *= require_self
  */
 
- $link: #444;
-$link-hover: #222;
 
 @import "bulma";
 @import "functions";
+$link: #444;
+$link-hover: #222;
+
+
+
 
 
 .notification {
@@ -29,11 +32,11 @@ $link-hover: #222;
   margin-bottom: 0;
 }
 
-.instrument-index-grid {
+.laptop-index-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
 
-  .instrument {
+  .laptop {
     border-left: 0;
     border-top: 0;
     position: relative;
@@ -49,7 +52,7 @@ $link-hover: #222;
     }
   }
 
-  .instrument-thumb {
+  .laptop-thumb {
     position: relative;
     max-height: 150px;
     overflow: hidden;
