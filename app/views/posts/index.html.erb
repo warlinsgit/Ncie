@@ -1,0 +1,57 @@
+ <% content_for :header do %>
+<section class="hero is-warning">
+  <div class="hero-body">
+    <div class="container">
+      
+    </div>
+  </div>
+</section>
+<% end %>
+
+    <section class="hero is-info is-medium is-bold">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <h1 class="title">  Blog</h1>
+            </div>
+        </div>
+    </section>
+
+
+
+    <div class="container">
+       <% @posts.each do |post| %>
+        <!-- START ARTICLE FEED -->
+        <section class="articles">
+            <div class="column is-8 is-offset-2">
+                <!-- START ARTICLE -->
+                  
+                 
+                <div class="card article ">
+                 
+                        
+                            <div class="media-content has-text-centered">
+                                 
+                                <p class="title article-title"><%= link_to post.title, post %></p>  
+                                <div class="tags has-addons level-item">
+                                   
+                                    <span class="tag is-rounded is-info">Post by <%= post.user.email.split('@').first %></span>     
+                                    <span class="tag is-rounded"><%= post.created_at.strftime("%B %d %Y, %l:%M%P") %></span>
+                                </div>
+                         
+
+
+                                  <%= simple_format truncate (post.content), length: 200, separator: ' '   %>
+                                   <%= link_to "read more", post_path(post.id) %>
+                                
+                   
+                 
+          </section>
+
+
+
+        <% end %>
+
+                      
+    
+
+    

@@ -3,6 +3,13 @@ Rails.application.routes.draw do
   resources :carts
 	resources :line_items
   resources :laptops
+  
+  resources :posts do 
+  	resources :show
+  resources :comments
+end
+
+
   devise_for :users, controllers: {
 
   	registrations: 'registrations'

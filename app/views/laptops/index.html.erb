@@ -37,7 +37,7 @@
 
       <h3 class="fw7 f4 title"><%= link_to laptop.title, laptop %></h3>
 
-     <p class="has-text-gray fg pt1">Sold by <%= laptop.user.email.split('@').first %></p>
+     <p class="has-text-gray fg pt1">For sale <%= laptop.user.email.split('@').first %></p>
 
       <p class="f3 fw6 has-text-right pt2 price"><%= number_to_currency(laptop.price, :unit => "€ ") %></p>
 
