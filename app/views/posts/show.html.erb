@@ -21,16 +21,10 @@
 	<div class="container">
 
 		<nav class="level">
-			
 			<div class="level-left">
-				
-
-				
-
-
 
 			</div>
-<% if user_signed_in? %>
+			<% if user_signed_in? %>
 
 			<div class="level-right">
 
@@ -65,15 +59,13 @@
 			
 				</p>
 
-
-
 			</div>
 
-		</nav>
+	    </nav>
 		    <% end %>
 
 
-		<div class="content container has-text-centered">
+		<div class="column is-8 is-offset-2 has-text-justified">
 
 			
 
@@ -86,25 +78,21 @@
                                    
                                     <span class="tag is-rounded is-info">Post by <%= @post.user.email.split('@').first %></span>     
                                     <span class="tag is-rounded"><%= @post.created_at.strftime("%B %d %Y, %l:%M%P") %></span>
-                                </div>
+
+                              
+                    </div>   
                          
-                         
-
-    		<div class="is-large pv5">
-
-
-				<%= @post.content %> 
-			
-			</div>
-		   
-
-        
+                
+            		<div class="has-text-centeredr  ">
+						<%= @post.content %> 
+					</div>
+           
 
 		
 </section>
 
-<section class=" section comments">
-	<div class="container">
+<section class="section comments">
+	<div class="column is-8 is-offset-2 has-text-justified">
 		
 		<h2 class="subtitle is-5"><strong><%= @post.comments.count %></strong> Comments</h2>
 		<%= render @post.comments %>
