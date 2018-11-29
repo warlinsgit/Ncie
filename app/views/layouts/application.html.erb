@@ -45,13 +45,13 @@
         <%= link_to "Blog", posts_path, class: "navbar-item"%>
      
 
-      <a class="navbar-item">
-        About us
-      </a>
+     
+       <%= link_to "About us", pages_about_path, class: "navbar-item"%>
+     
 
-      <a class="navbar-item">
-        Support
-      </a>
+      
+       <%= link_to "Contact", pages_contact_path, class: "navbar-item"%>
+    
 
       <%= link_to 'Sell', new_laptop_path, class: "navbar-item" %>
 
@@ -82,8 +82,8 @@
               </div>
             <% else %>
 
-            <%= link_to "Sign In", new_user_session_path, class:"navbar-item" %>
-            <%= link_to "Sign up", new_user_registration_path, class:"navbar-item"%>
+            <%= link_to "Sign In", new_user_session_path, class: "button  is-small is-info  " %> &nbsp
+            <%= link_to "Sign up", new_user_registration_path, class:"button  is-small is-info"%>
 
             <% end %>
             
@@ -103,12 +103,42 @@
 
   <footer class="footer">
   <div class="content has-text-centered">
+    
     <p>Andre, Sibusiso, Warley</a>. College Project - Ecommerce
       <a href="#">MIT</a>. The website content
-      is licensed <a href="#">NCI - College</a>.
-    </p>
+      is licensed <a href="#">NCI - College</a>
+    
+
+<p>
+  <a class="button">
+    <span class="icon">
+      <i class="fab fa-github"></i>
+    </span>
+    <span>GitHub</span>
+  </a>
+  <a class="button">
+    <span class="icon">
+      <i class="fab fa-twitter"></i>
+    </span>
+    <span>Twitter</span>
+  </a>
+
+  <a class="button">
+    <span class="icon">
+      <i class="fab fa-twitter"></i>
+    </span>
+    <span>Facebook</span>
+  </a>
+  
+  
+  
+</p>
+  
   </div>
 </footer>
 
+<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
   </body>
+
 </html>

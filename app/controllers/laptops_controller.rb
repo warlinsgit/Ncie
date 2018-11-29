@@ -5,7 +5,11 @@ class LaptopsController < ApplicationController
   # GET /laptops.json
   def index
     @laptops = Laptop.all.order("created_at desc")
+    @laptops = Laptop.search(params[:search])
+
+    #@laptops = Laptop.where(["brand LIKE ? ", "%#{params[:search]}%"])
   end
+  #brand, :model, :description, :condition, :finish, :title, :price, :image)
 
   # GET /laptops/1
   # GET /laptops/1.json

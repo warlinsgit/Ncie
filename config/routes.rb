@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'pages/about'
+  get 'pages/contact'
+  get 'pages/support'
   resources :line_items
   resources :carts
 	resources :line_items
@@ -7,6 +10,7 @@ Rails.application.routes.draw do
   resources :posts do 
   	resources :show
   resources :comments
+
 end
 
 
