@@ -6,7 +6,7 @@ class Search < ApplicationRecord
 
 
 
-  		laptops = laptops.where(["name LIKE ?", "%#{keywords}%"]) if keywords.present?
+  		laptops = laptops.where(["keywords LIKE ?", "%#{keywords}%"]) if keywords.present?
   		laptops = laptops.where(["brand LIKE ?", brand]) if brand.present?
   		laptops = laptops.where(["title LIKE ?", title]) if title.present?
   		laptops = laptops.where(["price >= ?", min_price]) if min_price.present?

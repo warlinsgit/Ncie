@@ -11,10 +11,10 @@
 <% end %>
 
 <%= form_tag laptops_path, :method => 'get' do %>
-<%= text_field_tag :search, params[:search] %>
+<%= text_field_tag :search, params[:search], placeholder: "dell,hp,macbook" %>
 <%= submit_tag "Search" %>
 <% end %>
-<p><%= link_to "Advanced Search", new_search_path %></p>
+<%= link_to "Advanced Search", new_search_path %>
 
 <div class="laptop-index-grid pt4">
   <% @laptops.each do |laptop| %>

@@ -4,6 +4,7 @@ class LaptopsController < ApplicationController
   # GET /laptops
   # GET /laptops.json
   def index
+    @laptops = Laptop.all.order("created_at desc")
     @laptops = Laptop.search(params[:search])
 
     #@laptops = Laptop.where(["name LIKE ? ", "%#{params[:search]}%"])

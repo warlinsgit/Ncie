@@ -36,7 +36,7 @@ class Laptop < ApplicationRecord
 
    def self.search(search)
    	if search
-   		where(["name LIKE ?", "%#{:search}%"])
+   		where(["brand LIKE ?", "%#{search}%"])
 
    	else
    		all
