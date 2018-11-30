@@ -20,7 +20,7 @@ class Laptop < ApplicationRecord
 
 	validates :price, length: { maximum: 7 }
 
-  BRAND = %w{ Dell MacBook Asus Lenovo HP Toshiba }
+  BRAND = %w{ Dell MacBook Asus Lenovo HP Toshiba "blank" }
   FINISH = %w{ Black White Navy Blue Red Clear Satin Yellow Seafoam }
   CONDITION = %w{ New Excellent Mint Used Fair Poor }
 
@@ -36,7 +36,7 @@ class Laptop < ApplicationRecord
 
    def self.search(search)
    	if search
-   		where(["brand LIKE ?", "%#{search}%"])
+   		where(["name LIKE ?", "%#{:search}%"])
 
    	else
    		all

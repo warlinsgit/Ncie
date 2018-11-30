@@ -14,7 +14,7 @@
 <%= text_field_tag :search, params[:search] %>
 <%= submit_tag "Search" %>
 <% end %>
-
+<p><%= link_to "Advanced Search", new_search_path %></p>
 
 <div class="laptop-index-grid pt4">
   <% @laptops.each do |laptop| %>

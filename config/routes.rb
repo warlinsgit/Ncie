@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :carts
 	resources :line_items
   resources :laptops
-  
+  resources :searches
   resources :posts do 
   	resources :show
   resources :comments

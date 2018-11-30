@@ -1,0 +1,51 @@
+<% content_for :header do %>
+<section class="hero is-warning">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+       Advanced Search
+      </h1>
+    </div>
+  </div>
+</section>
+<% end %>
+
+<%= simple_form_for @search, html: { multipart: true } do |f| %>
+  <div class="columns is-mobile pv5 ">
+    <div class="column is-half
+is-offset-one-quarter searchl has-text-centered">
+    
+                
+                <span class="select">
+                   <%= f.select(:brand, ['Lenovo', 'Asus', 'Dell', 'Microsoft', 'HP', 'Toshiba'], {include_blank: "Select a brand"}, { :class => 'my_style_class' }) %>
+                </span>
+           
+
+   
+               
+                <span class="select">
+
+                 <%= f.select(:condition, ['New', 'Excellent', 'Mint', 'Used', 'Fair', 'Poor'], {include_blank: "Select a Condition"}, { :class => 'my_style_class' }) %>
+                </span>
+
+                
+                 <span class="select">
+                  <%= f.select(:finish, ['Black', 'White', 'Navy', 'Blue', 'Red', 'Clear', 'Satin', 'Yellow', 'Grey'], {include_blank: "Select color"}, { :class => 'my_style_class' }) %>
+                </span>
+          
+
+             
+
+    
+               <label class="label">Price Range</label>
+               <%= f.text_field :min_price, size: 10, placeholder: "200", class: "" %> -
+                <%= f.text_field :max_price, size: 10, placeholder: "3000" %>
+     
+
+
+              <div class="actions pv3 "><%= f.submit "Search", class: "button is-info is-inverted " %></div>
+  </div>
+
+
+
+<% end %>
