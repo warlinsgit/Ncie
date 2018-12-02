@@ -4,45 +4,48 @@
   <div class="hero-body">
     <div class="container">
       <h1 class="title">
-        Browse the latest laptop on our community
+        Search...
       </h1>
     </div>
   </div>
 </section>
 <% end %>
 
-<p> <%= link_to "Back", new_search_path      %></p>
+<p> <%= link_to "Back", new_search_path %></p>
 
-<% if @search.search_laptops.empty?     %>
+<% if @search.search_laptops.empty? %>
 
 <p>No records found</p>
 
 <% else %>
 
-<% @search.search_laptops.each do |c|   %>
+
 <br>
 
 
 
-<div class="container laptop-search">
-  
-  
+<div class="laptop-index-grid pt4">
+<% @search.search_laptops.each do |c|   %>
+
+    <div class="laptop border-light">
       
-      <div class="column is-8 pv3 ">
-        <h1 class="title is-4"> <%= link_to c.title, laptop_path(c)   %></h1>
+    
+     
+          <div class="column is-8 pv3  ">
+        <h1 class="title is-6 "> <%= link_to c.title, laptop_path(c)   %></h1>
       
 
-      <table class="table is-narrow">
+      <table class="table is-narrow table is-hoverable table is-striped">
      
         <tr>
-          <td class="has-text-weight-bold">Condition:</td>
+           <td class="has-text-weight-bold">Condition:</td>
            <td><%= c.condition %></td>
         </tr>
       
 
     
           <tr>
-            <td class="has-text-weight-bold">Finish:</td>
+            <td class="has-text-weight-bold">Color:</td>
             <td><%= c.finish %></td>
           </tr>
     
@@ -58,17 +61,16 @@
           <td><%= c.model %></td>
         </tr>
 
-         <tr>
-          <td class="has-text-weight-bold">Price:</td>
-          <td><%= number_to_currency(c.price, :unit => ' €') %></td>
+         <tr class="">
+          <td class="has-text-weight-bold ">Price:</td>
+          <td class="is-info"><%= number_to_currency(c.price, :unit => ' €', ) %></td>
         </tr>
 
       </table>
    
-    </div>
-   
-    <% end %>
  
+    </div>
+  </div>
+<% end %>
 </div>
-   <% end %>
-   
+<% end %>
