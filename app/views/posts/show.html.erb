@@ -1,5 +1,4 @@
-
- <% content_for :header do %>
+<% content_for :header do %>
 <section class="hero is-warning">
   <div class="hero-body">
     <div class="container">
@@ -18,7 +17,7 @@
     </section>
 
 <section class="section">
-	<div class="container">
+
 
 		<nav class="level">
 			<div class="level-left">
@@ -55,7 +54,7 @@
 				<p class="level-item">
 					
 				
-				 <%= link_to "Back", posts_path, class: "button is-success is-outlined"%>
+				 <%= link_to "Back", posts_path, class: "button is-success is-outlined" %>
 			
 				</p>
 
@@ -63,18 +62,17 @@
 
 	    </nav>
 		    <% end %>
+		    	<div class="container">
 
 
 		<div class="column is-8 is-offset-2 has-text-justified">
 
 			
 
-
-
                     <%= image_tag(@post.image_url(:default)) %>
 
                
-			 		<div class="tags has-addons level-item">
+			 		<div class="tags has-addons level-item pv2">
                                    
                                     <span class="tag is-rounded is-info">Post by <%= @post.user.email.split('@').first %></span>     
                                     <span class="tag is-rounded"><%= @post.created_at.strftime("%B %d %Y, %l:%M%P") %></span>
@@ -83,7 +81,7 @@
                     </div>   
                          
                 
-            		<div class="has-text-centeredr  ">
+            		<div class="has-text-justified  ">
 						<%= @post.content %> 
 					</div>
            
@@ -103,9 +101,9 @@
 			<%= render 'comments/form' %>
 
 		</div>
-	</div>
+	
 
-
+</div>
 
 </section>
 
