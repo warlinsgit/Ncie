@@ -54,7 +54,7 @@ $link-hover: #222;
 
   .laptop-thumb {
     position: relative;
-    max-height: 150px;
+    max-height: 220px;
     overflow: hidden;
 
     img {
@@ -67,8 +67,9 @@ $link-hover: #222;
 
     .condition {
       position: absolute;
-      bottom: 10px;
+      bottom: 1px;
       right: 9px;
+      
     }
   }
 }
