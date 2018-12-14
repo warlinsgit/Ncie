@@ -21,11 +21,7 @@
       
       <div class="column is-8">
         <h1 class="title is-2"> <%= @laptop.title  %></h1>
-        
-
-
-    
-
+      
       <ul class="pv1">
 
           <% if @laptop.brand?  %>
@@ -43,8 +39,6 @@
       </ul>
 
 
-
-
       <div class="feature-image">
       
         <%= image_tag(@laptop.image_url(:default)) %>
@@ -57,8 +51,7 @@
         <%= @laptop.description %>
         
 
-
-      <h3 class="subtitle is-4 pt5">Product Specs</h3>
+      <h3 class="subtitle is-4 pt2">Product Specs</h3>
 
       <table class="table is-narrow">
         
