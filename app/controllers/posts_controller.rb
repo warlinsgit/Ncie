@@ -19,8 +19,8 @@ class PostsController < ApplicationController
   def new
     #@post = Post.new
     @post = current_user.posts.build
-    @user = current_user
-    redirect_to @post, warning: "You are not authorized" unless @user.admin?
+    #@user = current_user
+    #redirect_to @post, warning: "You are not authorized" unless @user.admin?
       
   end
 
