@@ -1,0 +1,14 @@
+
+
+<p>A new comment was posted for your  <%= link_to  @item.name, comment %>:</p>
+<blockquote>
+
+	<em><%=  @comment.body  %></em>
+
+</blockquote>
+
+<p>To reply to this comment, please visit the
+
+ 
+<%= link_to  "Item page ", @item   %>
+</p>

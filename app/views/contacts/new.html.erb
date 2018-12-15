@@ -1,0 +1,88 @@
+
+
+   <% content_for :header do %>
+<section class="hero is-warning">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+       Contact us
+      </h1>
+    </div>
+  </div>
+</section>
+<% end %>
+
+
+ 
+  <!-- Contact -->
+  <section class="section " id="contact">
+
+  	  <%= form_for @contact do |f| %>
+    <div class="container contactb ">
+      <div class="section-heading has-text-centered pv5 contacttop ">
+        <h3 class="title is-2 has ">Contact</h3>
+        <h4 class="subtitle is-5">Get in touch</h4>
+      </div>
+      <br>
+
+      <div class="columns">
+        <div class="column is-6 is-offset-3">
+          <div class="box">
+            <div class="field">
+             <%= f.label :name  %><br>
+              <div class="control">
+              	<%= f.text_field :name, required: true, class: "input"   %> 
+                
+              </div>
+            </div>
+
+            <div class="field">
+              <%= f.label :email, class: "label"  %><br>
+              <div class="control h">
+              	<%= f.text_field :email, required: true, class: "input"  %> 
+                
+                
+              </div>
+            </div>
+
+            <div class="field">
+             <%= f.label :message, class: "label"  %><br>
+              <div class="control">
+              	<%= f.text_area :message, as: :text, class: "textarea"  %> 
+                
+              </div>
+            </div>
+
+            <div class="hidden">
+  			<%= f.label :nickname  %><br>
+  			<%= f.text_field :nickname, hint: 'leave this field blank'  %> 
+
+  			</div>
+
+            <div class="field is-grouped has-text-centered">
+              <div class="control ">
+                
+                 <%= f.submit 'Send Message', class: "button is-link is-small"  %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+ <% end %>
+
+
+
+    <div class="container ">
+      <div class="section-heading has-text-centered ">
+      
+        <h4 class="subtitle is-5">Find us</h4>
+       <div class="map-responsive">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2381.694796991187!2d-6.245255548221163!3d53.34871937988131!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48670e8cd86e97e7%3A0x6d51b774ee7fa935!2sNational+College+of+Ireland!5e0!3m2!1sen!2sie!4v1543323000867" width="1000" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
+</div>
+      
+    </div>
+  </section>
+
+
+
