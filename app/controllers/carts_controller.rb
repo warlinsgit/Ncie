@@ -3,6 +3,8 @@ class CartsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
   before_action :set_cart, only: [:show, :edit, :update, :destroy]
 
+
+
   # GET /carts
   # GET /carts.json
   def index
@@ -12,7 +14,41 @@ class CartsController < ApplicationController
   # GET /carts/1
   # GET /carts/1.json
   def show
+  
   end
+
+  def pay 
+      @cart = Cart.find(params[:id])
+    
+
+      # Set your secret key: remember to change this to your live secret key in production
+      # See your keys here: https://dashboard.stripe.com/account/apikeys
+      Stripe.api_key = "sk_test_nEDClzT0xF4G4grjhkVZhZrP"
+
+      # Token is created using Checkout or Elements!
+      # Get the payment token ID submitted by the form:
+      token = params[:stripeToken]
+   
+      charge = Stripe::Charge.create(
+          :amount => (@cart.total_price * 100).to_i,
+          :currency => 'eur',
+          :source => token,
+          :description => 'Payment for card #{@cart.id}'
+          
+      )
+      
+          rescue Stripe::CardError => e
+          
+          redirect_to @cart, notice: "Payment declined" and return
+     
+      
+      @cart.update(status: "completed")
+      session.delete[:cart_id] = nil
+      redirect_to root_path, notice: "The laptop is on it's way" 
+  end
+
+
+
 
   # GET /carts/new
   def new

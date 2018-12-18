@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_12_211202) do
+ActiveRecord::Schema.define(version: 2018_12_16_161803) do
 
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -81,6 +81,11 @@ ActiveRecord::Schema.define(version: 2018_12_12_211202) do
     t.datetime "updated_at", null: false
     t.string "name"
     t.boolean "admin"
+    t.string "stripe_id"
+    t.string "card_brand"
+    t.string "card_exp_month"
+    t.string "card_exp_year"
+    t.string "card_last4"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

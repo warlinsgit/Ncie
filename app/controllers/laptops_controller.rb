@@ -30,6 +30,7 @@ class LaptopsController < ApplicationController
   def create
     @laptop = current_user.laptops.build(laptop_params)
 
+     
     respond_to do |format|
       if @laptop.save
         format.html { redirect_to @laptop, notice: 'Laptop was successfully created.' }
@@ -39,6 +40,9 @@ class LaptopsController < ApplicationController
         format.json { render json: @laptop.errors, status: :unprocessable_entity }
       end
     end
+
+
+   
   end
 
   # PATCH/PUT /laptops/1

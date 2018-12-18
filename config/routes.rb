@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
   get 'pages/about'
-
-  resources :line_items
-  resources :carts
-	resources :line_items
+  resources :charges
+  get 'charges/new'
+  resources :line_items 
+  resources :carts do 
+    member do 
+      post :pay 
+    end 
+  end
+	
   resources :laptops
   resources :contacts, only: [:new, :create]
   get 'contacts/new'
