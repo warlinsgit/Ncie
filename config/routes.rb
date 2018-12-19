@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'pages/about'
   resources :charges 
+  get 'charges/create'
   resources :line_items 
   resources :carts do 
     member do 

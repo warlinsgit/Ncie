@@ -53,7 +53,7 @@ class CartsController < ApplicationController
     
       @cart.update(status: "Sold")
       session.delete(:cart_id)
-      redirect_to charges_create_path, notice: "The laptop is on it's way" 
+      redirect_to root_path, notice: "The laptop is on it's way" 
   end
 
 

@@ -4,12 +4,10 @@ class ChargesController < ApplicationController
 
 
 
-def new
+def home
 end
 
-def create
-  
-end
+
 
 
 
