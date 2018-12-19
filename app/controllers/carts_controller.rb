@@ -48,12 +48,12 @@ class CartsController < ApplicationController
       
           rescue Stripe::CardError => e
           
-        redirect_to @cart, notice: "Payment declined" and return
+        #redirect_to @cart, notice: "Payment declined" and return
      
     
       @cart.update(status: "Sold")
       session.delete(:cart_id)
-      redirect_to root_path, notice: "The laptop is on it's way" 
+      redirect_to charges_create_path, notice: "The laptop is on it's way" 
   end
 
 

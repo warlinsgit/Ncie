@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   get 'pages/about'
-  resources :charges
-  get 'charges/new'
-  get 'charges/create'
+  resources :charges 
   resources :line_items 
   resources :carts do 
     member do 
@@ -10,6 +8,9 @@ Rails.application.routes.draw do
     end 
   end
   resources :laptops
+
+
+
   resources :contacts, only: [:new, :create]
   get 'contacts/new'
   resources :searches
