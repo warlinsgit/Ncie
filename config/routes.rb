@@ -2,13 +2,13 @@ Rails.application.routes.draw do
   get 'pages/about'
   resources :charges
   get 'charges/new'
+  get 'charges/create'
   resources :line_items 
   resources :carts do 
     member do 
-      post :pay 
+      post :pay  
     end 
   end
-	
   resources :laptops
   resources :contacts, only: [:new, :create]
   get 'contacts/new'

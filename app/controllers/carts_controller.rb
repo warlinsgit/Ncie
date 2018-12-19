@@ -20,32 +20,43 @@ class CartsController < ApplicationController
   def pay 
       @cart = Cart.find(params[:id])
     
-
+       amount = (@cart.total_price * 100).to_i
       # Set your secret key: remember to change this to your live secret key in production
       # See your keys here: https://dashboard.stripe.com/account/apikeys
       Stripe.api_key = "sk_test_nEDClzT0xF4G4grjhkVZhZrP"
 
       # Token is created using Checkout or Elements!
       # Get the payment token ID submitted by the form:
-      token = params[:stripeToken]
+       @customer = Stripe::Customer.create(email: params[:Email],
+                                          source: params[:Token])
+
+
+
    
-      charge = Stripe::Charge.create(
-          :amount => (@cart.total_price * 100).to_i,
+      @charge = Stripe::Charge.create(
+        customer: @customer.id,
+          :amount => amount,
           :currency => 'eur',
-          :source => token,
+          
           :description => 'Payment for card #{@cart.id}'
           
       )
+
+      if charge.paid && charge.amount == amount 
+        cart = Cart.create()
+      end
       
           rescue Stripe::CardError => e
           
-          redirect_to @cart, notice: "Payment declined" and return
+        redirect_to @cart, notice: "Payment declined" and return
      
-      
-      @cart.update(status: "completed")
-      session.delete[:cart_id] = nil
+    
+      @cart.update(status: "Sold")
+      session.delete(:cart_id)
       redirect_to root_path, notice: "The laptop is on it's way" 
   end
+
+
 
 
 
@@ -109,6 +120,7 @@ class CartsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def cart_params
       params.fetch(:cart, {})
+     
     end
 
     def invalid_cart
@@ -116,7 +128,6 @@ class CartsController < ApplicationController
       redirect_to root_path, notice: "That cart doesn't exist"
     end
 end
-
 
 
 

@@ -103,6 +103,8 @@ GEM
     faraday (0.15.4)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.25)
+    figaro (1.1.1)
+      thor (~> 0.14)
     formatador (0.2.5)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
@@ -289,6 +291,7 @@ DEPENDENCIES
   chromedriver-helper
   coffee-rails (~> 4.2)
   devise (~> 4.4)
+  figaro
   gravatar_image_tag (~> 1.2)
   guard (~> 2.15)
   jbuilder (~> 2.5)

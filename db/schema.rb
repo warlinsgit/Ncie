@@ -10,11 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_16_161803) do
+ActiveRecord::Schema.define(version: 2018_12_18_225507) do
 
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.string "status"
   end
 
   create_table "comments", force: :cascade do |t|

@@ -12,7 +12,7 @@
 </section>
 <% end %>
 
- 
+
 
 <div class="keep-shopping pv1 mt4 has-text-right">
 
@@ -31,30 +31,24 @@
       <h4 class="title is-4">
         <span class="f5 has-text-grey">Total:</span> <%= number_to_currency(@cart.total_price, :unit => ' €') %>
       </h4>
+
     </div>
 
 
 
-   <%= form_tag pay_cart_path(@cart), method: :post do  %> 
-   <% if user_signed_in? %>
-   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="<%=  %>  "
-          data-amount='<%= @cart.total_price * 100 %>'
-          data-locale="auto"
-          data-currency="eur">
-            
-          </script>
+ </div>
+  </div>
 
-          <% end %>
+ 
+</section>
+
+ 
     
 
-  <% end %>
+
      
 
 
 
 
-  </div>
-  </div>
-</section>
+ 

@@ -5,5 +5,7 @@ class AddPaymentFieldsToUsers < ActiveRecord::Migration[5.2]
     add_column :users, :card_exp_month, :string
     add_column :users, :card_exp_year, :string
     add_column :users, :card_last4, :string
+   
+
   end
 end
