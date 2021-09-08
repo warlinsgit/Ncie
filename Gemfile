@@ -85,7 +85,7 @@ group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
-  gem 'better_errors', '~> 2.5'
+  gem 'better_errors', '~> 2.9'
   gem 'guard', '~> 2.15'
  gem 'livereload', '~> 1.6', '>= 1.6.1'
   # Easy installation and use of chromedriver to run system tests with Chrome
